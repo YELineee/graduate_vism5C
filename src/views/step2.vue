@@ -33,15 +33,12 @@
 
 <script setup>
 import { ref } from 'vue';
-import { sendRequest } from '../stores/post';
-import { useDataStore } from '../stores/postData';
 
-const store = useDataStore();
+
 const isDragging = ref(false);
 const inputText = ref('');
 
 function handleInput() {
-   store.setDataInput(inputText.value);
    console.log('inputText:', inputText.value);
 }
 
@@ -71,7 +68,6 @@ function handleDrop(event) {
 
 const getExample = () => {
    inputText.value = '>seq0\nGGAGCGCGCCTGACCCAGGGCGCACCGTGGGACCCGGGCGCGGGGCTGGCGAAGAGCTGCCCCGCGGGGCTAGCAGCCGCGGAGTGGCCTACAGGGGTCCTCCCCCGGAGGGGCCGGGCCGGGGCGGGGAGATGAACGGCTTCAGCACAGAGGAGGACAGCCGCGAAGGGCCCCCTGCCGCCCCCGCCGCCGCCCCGGGCTACGGCCAGAGCTGCTGCCTCATCGCGGACGGCGAGCGCTGCGTCCGGCCCGCGGGCAACGCCTCCTTCAGCAAGAGGGTGCAGAAAAGCATCTCGCAGAAGAAACTCAAGCTGGACATAGACAAGAGCGTAAGGCACCTGTATATCTGCGACTTCCACAAAAATTTCATCCAGAGCGTCCGAAATAAAAGGAAGAGGAAGGCAAGTGACGATGGCGGAGACTCCCCCGAGCACGATGCTGACATC';
-   store.setDataInput(inputText.value);
    console.log('inputText:', inputText.value);
 };
 

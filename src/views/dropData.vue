@@ -28,7 +28,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import { sendRequest } from '../stores/post';
 
 
 
