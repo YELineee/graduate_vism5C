@@ -1,0 +1,31 @@
+<template>
+   <svg width="64px" height="64px" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+      <g id="SVGRepo_iconCarrier">
+         <path
+            d="M322 223.805C315.249 185.159 226.246 115.914 189.599 111.807C149.224 107.284 117.586 180.867 138.648 213.15C151.642 233.066 240.614 216.256 316.393 225.744"
+            :stroke="color" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+         </path>
+         <path d="M282.432 158.51C291.029 67.79 244.513 121.869 266.719 147.589" :stroke="color" stroke-opacity="0.9"
+            stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+         <path d="M256.946 147.051C204.311 118.779 199.53 165.244 260.648 176.549" :stroke="color" stroke-opacity="0.9"
+            stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+         <path d="M286.223 196.563C286.415 196.048 286.606 195.533 286.801 195.019" :stroke="color" stroke-opacity="0.9"
+            stroke-width="16" stroke-linecap="round" stroke-linejoin="round"></path>
+         <path
+            d="M138.392 215.326C131.817 208.864 123.809 202.441 115.116 198.895C74.3723 182.278 69.12 236.77 94.2262 258.53C119.068 280.062 191.442 253.049 195.688 292"
+            :stroke="color" stroke-opacity="0.9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round">
+         </path>
+      </g>
+   </svg>
+</template>
+
+<script setup>
+defineProps({
+   color: {
+      type: String,
+      default: '#000000'
+   }
+})
+</script>

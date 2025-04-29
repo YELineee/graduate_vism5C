@@ -1,0 +1,64 @@
+<template>
+   <div class="w-full h-full p-5">
+      <!-- up -->
+      <div class="w-full h-2/12 ">
+         <div class="text-xl border-b-2 ">
+            <p class="text-3xl ">Step 2:</p>
+            Paste your sequence here
+         </div>
+      </div>
+      <!-- middle  -->
+      <div class="w-full h-8/12 ">
+
+         <div class="w-full h-full border border-gray-300 rounded" :class="{ 'border-blue-500 border-2': isDragging }"
+            @dragover.prevent="handleDragOver" @dragleave="handleDragLeave" @drop.prevent="handleDrop">
+            <textarea class="w-full h-full p-2 outline-none resize-none" placeholder="Enter text here"
+               v-model="inputText"></textarea>
+         </div>
+      </div>
+      <!-- botton -->
+      <div class="w-full h-2/12 rounded-xl pt-2">
+         <div>
+            <button @click="sendRequest">Send Request</button>
+
+         </div>
+      </div>
+   </div>
+</template>
+
+<script setup>
+import { ref } from 'vue';
+import { sendRequest } from '../stores/post';
+
+
+
+const isDragging = ref(false);
+const inputText = ref('');
+
+function handleDragOver() {
+   isDragging.value = true;
+}
+
+function handleDragLeave() {
+   isDragging.value = false;
+}
+
+function handleDrop(event) {
+   isDragging.value = false;
+   const files = event.dataTransfer?.files;
+   if (files && files.length > 0) {
+      Array.from(files).forEach(file => {
+         if (file.type.startsWith('image/')) {
+            console.log('Dropped file:', file.name);
+         } else {
+            console.warn('Unsupported file type:', file.type);
+         }
+      });
+   } else {
+      console.warn('No files detected in drop event.');
+   }
+}
+
+
+
+</script>
